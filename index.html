@@ -18,14 +18,30 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" id="ticket">
+    <p>Value: <span id="ticket-value"></span></p>
+  </div>
+  
+
+<input type="checkbox" class="checkbox" id="delivery">
+  <div class="slidecontainer">
+    
+    <input type="range" min="1" max="100" value="50" class="slider" id="fee">
+    <p>Value: <span id="fee-value"></span></p>
+  </div>
+
+  
+  <p>Total: <span id="total-value"></span></p>
+
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
