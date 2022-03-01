@@ -27,7 +27,6 @@ feeSlider.oninput = function() {
 }
 
 deliveryCheckbox.oninput = function() {
-    ticketSliderOutput.innerHTML = this.value;
     totalOutput.innerHTML = Number(ticketSlider.value) + Number(feeSlider.value);
     if ($("#delivery").is(':checked')) totalOutput.innerHTML = totalOutput.innerHTML/2;
   }
