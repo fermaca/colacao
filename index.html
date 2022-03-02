@@ -25,26 +25,56 @@
 
 <body>
 
-  <div class="slidecontainer">
-    <input type="range" min="1" max="100" value="50" class="slider" id="ticket">
-    <p>Value: <span id="ticket-value"></span></p>
-  </div>
-  
-
-<input type="checkbox" class="checkbox" id="delivery">
-  <div class="slidecontainer">
+  <div class="slider-container">
+    <div class="slider-tracked"></div>
+    <div class="slider-track"></div>
+    <input type="range" min="15" max="60" value="25" class="slider" id="ticket">
     
-    <input type="range" min="1" max="100" value="50" class="slider" id="fee">
-    <p>Value: <span id="fee-value"></span></p>
+  </div>
+  
+  <div class="switch-container">
+  <p>¿Tienes delivery propio?</p>
+    <label class="switch-wrapper">
+      <input type="checkbox" id="delivery">
+      <span class="switch round"></span>
+    </label>
+  </div>
+  
+
+  <div class="slider-container">
+    <div class="slider-tracked"></div>
+    <div class="slider-track"></div>
+    <input type="range" min="0" max="30" value="30" class="slider" id="fee">
   </div>
 
-  
-  <p>Total: <span id="total-value"></span></p>
+  <div><p>Info</p></div>
+  <p>Delivery fee: <span id="fee-value"></span></p>
+  <p>Average ticket: <span id="ticket-value"></span></p>
+  <p>Delivery propio: <span id="delivery-value"></span></p>
 
 
+  <table id="calc-results">
+    <tr>
+      <th>Delitbee</th>
+      <th>Platforms</th>
+    </tr>
+    <tr>
+      <td><span id="dtbFee"></span></td>
+      <td><span id="platformsFee"></span></td>
+      <td><span>Comisión</span></td>
+    </tr>
+    <tr>
+      <td><span id="dtbProfit"></span></td>
+      <td><span id="platformsProfit"></span></td>
+      <td><span>Beneficio</span></td>
+    </tr>
+  </table>
+
+  <div>Ganarás <span id="totalProfit"></span>más despues de 1.000 pedidos</div>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -53,5 +83,5 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
-
+<img src="img/calculator.png" width="100%">
 </html>

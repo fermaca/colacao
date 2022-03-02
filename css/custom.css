@@ -1,14 +1,16 @@
-.slidecontainer {
-  width: 100%;
+.slider-container {
+  width: 300px;
+  position: relative;
 }
 
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 25px;
-  background: #d3d3d3;
+  height: 5px;
+  border-radius: 5px;
+  background: #dedede;
   outline: none;
-  opacity: 0.7;
+  opacity: 1;
   -webkit-transition: .2s;
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
@@ -21,10 +23,40 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #04AA6D;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
   cursor: pointer;
+}
+
+.slider-tracked {
+  height: 5px;
+  position: absolute;
+  border-radius: 5px;
+  background: #2196F3;
+  top: 11px;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slider-track {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .slider::-moz-range-thumb {
@@ -34,8 +66,73 @@
   cursor: pointer;
 }
 
+.switch-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch-wrapper input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .switch {
+  background-color: #2196F3;
+}
+
+input:focus + .switch {
+  -webkit-box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .switch:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.switch.round {
+  border-radius: 34px;
+}
+
+.switch.round:before {
+  border-radius: 50%;
+}
+
 body {
   background: #000;
   color: white;
+  padding: 100px;
+}
+
+#calc-results td, #calc-results th {
+  border: 1px solid white;
 }
 /*# sourceMappingURL=custom.css.map */
